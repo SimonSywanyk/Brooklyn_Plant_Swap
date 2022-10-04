@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+          <!-- Plant image  -->
+          <div id="tabs-1-panel-1" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
+            <img src="<%= post.image%>" alt="" class="h-2/3 w-2/3 object-cover object-center sm:rounded-lg">
+          </div>
+
+      <!-- Plant info -->
+      <div class="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900"><%= post.title %></h1>
+
+        <div class="mt-3">
+          <h2 class="sr-only">Plant Description:</h2>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="sr-only">Description</h3>
+
+          <div class="space-y-6 text-base text-gray-700">
+            <p><%= post.caption %></p>
+          </div>
+        </div>
+
+
+          <div class="sm:flex-col1 mt-10 flex">
+<!-- If user is post creator, show delete button -->
+            <%if(post.user == user.id){ %>
+              <form
+                action="/post/deletePost/<%= post.id %>?_method=DELETE"
+                method="POST"
+                class="col-3"
+              >
+                <button class="inline-flex items-center rounded-md border border-transparent bg-red-500 px-3 py-3 text-base font-medium text-white shadow-sm hover:bg-red-800 focus:outline-none focus:ring-2 fa-solid" type="submit">
+                  <i class="fa-solid fa-trash-can"></i>
+                  <span class="ml-3 tracking-widest">Delete</span>
+                </button>
+              </form>
+              <%}%>
+
+<!-- If user is NOT post creator, show Message & Save buttons -->
+              <%if(post.user != user.id){ %>
+            <button type="submit" class="flex max-w-xs flex-1 items-center justify-evenly rounded-md border border-transparent bg-blue-500 py-3 px-3 text-base font-medium text-white hover:bg-blue-300 sm:w-full">
+              <i class="fa-duotone fa-messages fa-xl" ></i>
+              <span>Message for plant swap</span>
+            </button>
+
+            <button type="button" class="ml-4 flex items-center justify-center rounded-md py-3 px-3 bg-red-300 text-gray-700 hover:text-black hover:bg-red-100">
+                <i class="fa-regular fa-heart fa-xl mr-2"></i>
+              </svg>
+              <span>Save</span>
+            </button>
+            <%}%>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

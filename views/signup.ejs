@@ -1,0 +1,86 @@
+<!doctype HTML>
+<HEAD>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BROOKLYN PLANT SWAP</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+  crossorigin="anonymous"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
+</HEAD>
+
+  <header class="bg-green-600">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+      <div class="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
+        <div class="flex items-center">
+          <a href="#">
+            <span class="sr-only">Brooklyn Plant Swap</span>
+            <i class="fa-regular fa-leaf fa-2xl"></i>
+            <h1 class="font-bold text-2xl">Brooklyn Plant Swap</h1>
+          </a>
+          <div class="ml-10 hidden space-x-8 lg:block">
+            <a href="#" class="text-base font-medium text-white">
+              <i class="fa-duotone fa-plus-large"></i>
+              ADD PLANT
+            </a>
+            <a href="/feed" class="text-base font-medium text-white">
+              <i class="fa-duotone fa-magnifying-glass"></i>
+              SEARCH PLANTS
+            </a>
+            <a href="#" class="text-base font-medium text-white">FAQS</a>
+            <a href="#" class="text-base font-medium text-white">ABOUT</a>
+          </div>
+        </div>
+        <div class="ml-10 space-x-4">
+          <a href="/login" class="inline-block rounded-md border border-transparent bg-green-900 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75">Sign in</a>
+          <a href="/signup" class="inline-block rounded-md border border-transparent bg-yellow-300 py-2 px-4 text-base font-medium text-green-800 hover:bg-green-50">Sign up</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main class="container bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Create your account</h2>
+      </div>
+        <div class="row justify-content-center">
+            <section class="col-6 mt-5">
+                <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                        <div class="alert alert-info"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                <form action="/signup" method="POST">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                      </div>
+                      <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Submit</button>
+                  </form>
+            </section>
+        </div>
+    </main>
+
+<%- include('partials/footer') -%>

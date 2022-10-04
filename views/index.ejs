@@ -1,0 +1,82 @@
+<!doctype HTML>
+<HEAD>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BROOKLYN PLANT SWAP</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+  crossorigin="anonymous"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/5f6efef2dd.js" crossorigin="anonymous"></script>
+</HEAD>
+
+  <header class="bg-green-600">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+      <div class="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
+        <div class="flex items-center">
+          <a href="#">
+            <span class="sr-only">Brooklyn Plant Swap</span>
+            <i class="fa-regular fa-leaf fa-2xl"></i>
+            <h1 class="font-bold text-2xl">Brooklyn Plant Swap</h1>
+          </a>
+          <div class="ml-10 hidden space-x-8 lg:block">
+            <a href="#" class="text-base font-medium text-white">
+              <i class="fa-duotone fa-plus-large"></i>
+              ADD PLANT
+            </a>
+            <a href="/feed" class="text-base font-medium text-white">
+              <i class="fa-duotone fa-magnifying-glass"></i>
+              SEARCH PLANTS
+            </a>
+            <a href="#" class="text-base font-medium text-white">FAQS</a>
+            <a href="#" class="text-base font-medium text-white">ABOUT</a>
+          </div>
+        </div>
+        <div class="ml-10 space-x-4">
+          <a href="/login" class="inline-block rounded-md border border-transparent bg-green-900 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75">Sign in</a>
+          <a href="/signup" class="inline-block rounded-md border border-transparent bg-yellow-300 py-2 px-4 text-base font-medium text-green-800 hover:bg-green-50">Sign up</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+<main class="container">
+<div class="relative overflow-hidden bg-white">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+        <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+        <div>
+          <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
+          </div>
+        <main class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="sm:text-center lg:text-left">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">Brooklyn</span>
+              <span class="block text-green-600 xl:inline">Plant Swap</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">Brooklyn Plant Swap is a plant exchange platform and social network dedicated to making the world a greener.</p>
+            <p class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">Anyone may join to donate, swap or adopt plants.</p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+              <div class="rounded-md shadow">
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src="/imgs/homePlant.jpg" alt="">
+    </div>
+  </div>
+</main>
+
+
+
+
+<%- include('partials/footer') -%>
